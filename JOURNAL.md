@@ -36,10 +36,10 @@ open-source pull request.
 ## Week 8 — Reproduction & solution planning
 
 **Reproduction commit link:**
-
+https://github.com/douglasem/pathreview/commit/1cab1ac765ea3c1809bbb277cbd196c877017b84
 
 **PLAN.md link:**
-
+https://github.com/douglasem/pathreview/blob/test/157-partial-overlap-fixture/PLAN.md
 
 **Reproduction summary:**
 I reproduced the issue by running:
