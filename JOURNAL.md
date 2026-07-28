@@ -31,3 +31,21 @@ that only part of the query overlaps with the chunk. This makes the issue approp
 for my current experience level while still allowing me to practice reading tests,
 understanding expected behavior, running targeted checks, and submitting an
 open-source pull request.
+
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:**
+
+
+**PLAN.md link:**
+
+
+**Reproduction summary:**
+I reproduced the issue by running:
+
+```bash
+.venv/bin/pytest tests/unit/test_relevance_scorer.py -q
+```
+
+The test test_query_with_partial_overlap failed because it expected a score below 0.9, but the scorer returned 1.0. After reviewing the issue description, I confirmed that the test fixture actually contains all of the query terms, so it represents full overlap rather than partial overlap.
