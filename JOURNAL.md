@@ -62,3 +62,22 @@ Run `make check` and `make test-unit`, review the final diff, commit and push th
 
 **Blockers:**
 None.
+
+### Check-in 2 (end of week)
+
+**PR link:** [paste the GitHub PR link]
+
+**Branch:** `test/157-partial-overlap-fixture`
+
+**What you built:**
+I corrected the fixture in `test_query_with_partial_overlap` so it now represents genuine partial keyword overlap. The original chunk matched all four query terms and correctly received a score of `1.0`; the updated chunk matches two of four terms and produces the intended score of `0.5` without changing production code.
+
+**Tests added or updated:**
+Updated `tests/unit/test_relevance_scorer.py`, specifically
+`TestRelevanceScorer.test_query_with_partial_overlap`. The test now covers the case where only some query tokens appear in the retrieved chunk and verifies that the scorer returns a middle-range value rather than full relevance.
+
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
+Note: Both make check and make test-unit have pre-existing failures unrelated to relevance_scorer.py. I confirmed that the changes implemented remove the test failures related to relevance_scorer.py.
+
+**Draft PR feedback received from:**
+None.
