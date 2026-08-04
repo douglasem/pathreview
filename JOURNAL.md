@@ -49,3 +49,16 @@ I reproduced the issue by running:
 ```
 
 The test test_query_with_partial_overlap failed because it expected a score below 0.9, but the scorer returned 1.0. After reviewing the issue description, I confirmed that the test fixture actually contains all of the query terms, so it represents full overlap rather than partial overlap.
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+I reproduced Issue #157 and confirmed that `test_query_with_partial_overlap` failed because its fixture contained all four query terms. I inspected `rag/evaluator/relevance_scorer.py` and verified that the scorer calculates keyword overlap as matched query tokens divided by total query tokens. I updated the fixture in `tests/unit/test_relevance_scorer.py` so only two of the four query terms overlap, producing a true partial-overlap score of 0.5. The targeted relevance scorer test file now passes all 19 tests.
+
+**Next steps:**
+Run `make check` and `make test-unit`, review the final diff, commit and push the fix, open a draft pull request, request peer or mentor feedback, and complete Check-in 2 before marking the PR ready for review.
+
+**Blockers:**
+None.
