@@ -87,3 +87,40 @@ I compared the results against `upstream/main` before submitting my PR.
 This confirms that my change fixed the targeted relevance scorer test and did not introduce any new failures.
 
 **Draft PR feedback received from:** none (requested peer feedback in Slack but did not receive a response before submission)
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [ ] Yes  [x] No — feedback not required
+
+**Summary of feedback:**
+
+No reviewer feedback had been received by the submission deadline. My pull request remains open and ready for review.
+
+**How you responded:**
+
+N/A
+
+### Reflection
+
+**What was harder than you expected?**
+
+The hardest part was not fixing the issue itself—it was learning how to work within an unfamiliar open-source project. Setting up the development environment took much longer than I expected because I had to install Docker, configure the `.env` file, troubleshoot database connectivity, and understand the project's workflow before I could even reproduce the issue. I also learned that understanding the existing tests was just as important as understanding the production code.
+
+**What did you learn about working in a large codebase?**
+
+I learned that making a small change often requires understanding much more of the surrounding code than I initially expected. For Issue #157, I investigated both `tests/unit/test_relevance_scorer.py` and `rag/evaluator/relevance_scorer.py` before deciding whether production code actually needed to change. That investigation showed the scoring logic was already correct and the real problem was the test fixture itself. Working in an established codebase requires confirming the root cause before making changes.
+
+**How did AI tools help — and where did they fall short?**
+
+AI was extremely helpful for navigating an unfamiliar codebase, understanding the repository structure, explaining how the relevance scorer worked, and helping me troubleshoot environment setup problems. It also helped me understand Git, pull requests, and the contribution workflow. However, AI could not determine whether failing tests or mypy errors were pre-existing project issues or introduced by my changes. I still needed to investigate the repository, compare results against `upstream/main`, and verify everything myself.
+
+**What would you do differently if you started over?**
+
+If I started over, I would spend more time reading the repository documentation before beginning implementation. I would also run the project's full test suite immediately after setting up the environment to establish a baseline of existing failures before making any changes. That would have made it much easier to recognize which issues were unrelated to my contribution.
+
+**What are you most proud of from this module?**
+
+I'm most proud that I resisted changing production code until I fully understood the problem. After investigating the relevance scorer, I realized the implementation was already correct and that the failing test was caused by an incorrect fixture. Fixing the root cause instead of introducing unnecessary code changes helped me better understand how professional open-source contributions should be approached.
