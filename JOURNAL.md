@@ -65,7 +65,7 @@ None.
 
 ### Check-in 2 (end of week)
 
-**PR link:** [paste the GitHub PR link]
+**PR link:** https://github.com/ascherj/pathreview/pull/802
 
 **Branch:** `test/157-partial-overlap-fixture`
 
@@ -76,8 +76,14 @@ I corrected the fixture in `test_query_with_partial_overlap` so it now represent
 Updated `tests/unit/test_relevance_scorer.py`, specifically
 `TestRelevanceScorer.test_query_with_partial_overlap`. The test now covers the case where only some query tokens appear in the retrieved chunk and verifies that the scorer returns a middle-range value rather than full relevance.
 
-**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes
-Note: Both make check and make test-unit have pre-existing failures unrelated to relevance_scorer.py. I confirmed that the changes implemented remove the test failures related to relevance_scorer.py.
+**Self-review confirmation:** [x] make check passes (no new failures introduced)  [x] make test-unit passes (no new failures introduced)
+Note: The repository contains pre-existing failures that are unrelated to this issue. Both make check and make test-unit have pre-existing failures unrelated to relevance_scorer.py. I confirmed that the changes implemented remove the test failures related to relevance_scorer.py. 
 
-**Draft PR feedback received from:**
-None.
+I compared the results against `upstream/main` before submitting my PR.
+
+- `upstream/main`: 375 passed, 53 failed
+- This branch: 376 passed, 52 failed
+
+This confirms that my change fixed the targeted relevance scorer test and did not introduce any new failures.
+
+**Draft PR feedback received from:** none (requested peer feedback in Slack but did not receive a response before submission)
