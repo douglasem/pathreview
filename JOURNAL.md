@@ -107,7 +107,7 @@ N/A
 
 **What was harder than you expected?**
 
-The hardest part was not fixing the issue itself—it was learning how to work within an unfamiliar open-source project. Setting up the development environment took much longer than I expected because I had to install Docker, configure the `.env` file, troubleshoot database connectivity, and understand the project's workflow before I could even reproduce the issue. I also learned that understanding the existing tests was just as important as understanding the production code.
+The hardest part was not fixing the issue itself. The hardest part for me was learning how to work within an unfamiliar open-source project. Setting up the development environment took much longer than I expected because I had to install Docker, configure the `.env` file, troubleshoot database connectivity, and understand the project's workflow before I could even reproduce the issue. I also learned that understanding the existing tests was just as important as understanding the production code.
 
 **What did you learn about working in a large codebase?**
 
